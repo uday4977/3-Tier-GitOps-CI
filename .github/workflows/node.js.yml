@@ -150,8 +150,8 @@ jobs:
       - name: Bump images
         run: |
           curl -sL https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_linux_amd64 -o yq && sudo install yq /usr/local/bin/yq
-          yq -i '(.spec.template.spec.containers[]|select(.name=="backend")).image="adijaiswal/backend:"+env(IMAGE_TAG)'  cd/k8s/prod/backend-deploy.yaml
-          yq -i '(.spec.template.spec.containers[]|select(.name=="frontend")).image="adijaiswal/frontend:"+env(IMAGE_TAG)' cd/k8s/prod/frontend-deploy.yaml
+          yq -i '(.spec.template.spec.containers[]|select(.name=="backend")).image="adijaiswal/backend:"+env(IMAGE_TAG)'  cd/k8s/prod/backend.yaml
+          yq -i '(.spec.template.spec.containers[]|select(.name=="frontend")).image="adijaiswal/frontend:"+env(IMAGE_TAG)' cd/k8s/prod/frontend.yaml
       - name: Commit & push directly
         working-directory: cd
         run: |
