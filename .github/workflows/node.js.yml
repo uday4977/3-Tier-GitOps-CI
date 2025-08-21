@@ -137,7 +137,7 @@ jobs:
     needs: trivy_image_scan
     env:
       IMAGE_TAG: ${{ github.sha }}
-      CD_REPO: adijaiswal/3-Tier-GitOps-CD
+      CD_REPO: jaiswaladi246/3-Tier-GitOps-CD
       CD_BRANCH: main
     steps:
       - name: Checkout CD repo
