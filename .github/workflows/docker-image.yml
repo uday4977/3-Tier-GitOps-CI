@@ -163,7 +163,7 @@ jobs:
       - name: Checkout CD repo
         uses: actions/checkout@v4
         with:
-          repository: jaiswaladi246/3-Tier-GitOps-CD
+          repository: uday4977/3-Tier-GitOps-CD
           ref: main
           token: ${{ secrets.CD_REPO_TOKEN }}
           path: cd
